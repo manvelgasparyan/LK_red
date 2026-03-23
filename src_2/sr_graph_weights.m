@@ -14,7 +14,7 @@ function [weights] = sr_graph_weights (stoich, rates, species)
            %Check if S_ij is negative
            if S_ij < 0
                weight_count = weight_count + 1;
-               weights(weight_count) = rates(j)/species(i);
+               weights(weight_count) = diff(rates(j),species(i));
            end
        end
    end
